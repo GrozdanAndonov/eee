@@ -10,14 +10,25 @@ class MainWindowVM {
 
     public string FileAddr { get; set; }
     public ICommand AddCommand { get; set; }
+    public ICommand AddNewKeywordsCommand { get; set; }
 
     public MainWindowVM() {
         context = new ArticlesContext();
         article = context.Articles.First();
         AddCommand = new RelayCommand(getFileAndSend);
+        AddNewKeywordsCommand = new RelayCommand(addNonExistingKeywords);
     }
     private void getFileAndSend(object obj) {
         // има имплементация на getFileAndSend...
+    }
+
+    private void addNonExistingKeywords(string keywords) {
+        string[] keywords = keywords.Split(',');
+        foreach (string keyword in keywords) {
+            if (context.KeyWords.Find(keyword) == null) {
+                context.KeyWords.Add(keyword);
+            }
+        }
     }
 }
 
@@ -28,6 +39,7 @@ class MainWindowVM {
     
     public ArticleContext() : base() { }
     public DbSet<Article> Articles { get; set; }
+    public DbSet<KeyWord> KeyWords { get; set; }
 
     class Article {
         public int ArticleId { get; set; }
@@ -40,6 +52,10 @@ class MainWindowVM {
             // има имплементация на getStringFromPdfFile
         }
 
+    }
+
+    class KeyWord {
+        public string keyword { get; set; }
     }
 
  }
