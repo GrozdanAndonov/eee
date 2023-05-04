@@ -1,0 +1,26 @@
+<Window x:Class = "MainWindowVM" Title = "MainWindow">
+    <Grid>
+         <StackPanel Name = "Display">
+            <StackPanel Orientation = "Horizontal"> 
+                <TextBlock Text = "Заглавие: "/> 
+                <TextBlock Text = "{Binding DisplayArticle.Title}"/>
+            </StackPanel> 
+            
+            <StackPanel Orientation = "Horizontal" > 
+                <TextBlock Text = "Автори: "/> 
+                <TextBlock Text = "{Binding DisplayArticle.Autors}" /> 
+            </StackPanel>
+            
+            <StackPanel Orientation = "Horizontal" > 
+                <TextBlock Text = "Ключови думи: "/> 
+                <TextBlock Text = "{Binding DisplayArticle.KeyWords}" /> 
+            </StackPanel>
+
+            <StackPanel Orientation = "Horizontal" > 
+                <TextBlock Text = "Адрес на файл: "/> 
+                <TextBlock Text = "{Binding FileAddr}" /> 
+            </StackPanel>
+
+      </StackPanel>
+    </Grid>
+</Window>
