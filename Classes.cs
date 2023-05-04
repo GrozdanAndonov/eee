@@ -1,5 +1,6 @@
 // View Model
 class MainWindowVM {
+    private DbContext context;
     private Article article;
     public Article DisplayArticle
     {
@@ -11,6 +12,8 @@ class MainWindowVM {
     public ICommand AddCommand { get; set; }
 
     public MainWindowVM() {
+        context = new ArticlesContext();
+        article = context.Articles.First();
         AddCommand = new RelayCommand(getFileAndSend);
     }
     private void getFileAndSend(object obj) {
