@@ -24,7 +24,7 @@ class MainWindowVM {
  // Model
  public class ArticlesContext : DbContext {
     
-    public ArticleContext() : base() {}
+    public ArticleContext() : base() { }
     public DbSet<Article> Articles { get; set; }
 
     class Article {
