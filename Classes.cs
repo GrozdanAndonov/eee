@@ -14,6 +14,7 @@ class MainWindowVM {
         AddCommand = new RelayCommand(getFileAndSend);
     }
     private void getFileAndSend(object obj) {
+        article.DateOfCreation = DateTime.Now;
         // има имплементация на getFileAndSend...
     }
 }
@@ -23,9 +24,7 @@ class MainWindowVM {
  // Model
  public class ArticlesContext : DbContext {
     
-    public ArticleContext() : base() {
-        DateOfCreation = DateTime.Now;
-     }
+    public ArticleContext() : base() {}
     public DbSet<Article> Articles { get; set; }
 
     class Article {
