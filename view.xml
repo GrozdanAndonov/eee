@@ -1,0 +1,9 @@
+<Grid>
+<ListView Name="AuthorsGrid" ItemsSource="{Binding Article.Autors}"  >  
+            <ListView.View>  
+                <GridView x:Name="AuthorsNamesInList">   
+                    <GridViewColumn Header="Name of Author" DisplayMemberBinding="{Binding Name}"/>  
+                </GridView>  
+            </ListView.View>  
+        </ListView> 
+</Grid>

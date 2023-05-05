@@ -31,7 +31,7 @@ class MainWindowVM {
     class Article {
         public int ArticleId { get; set; }
         public string Title { get; set; }
-        public string Autors { get; set; }
+        public IList<Autor> Autors { get; set; }
         public string KeyWords { get; set; }
         public byte[] PdfFile { get; set; }
         public DateTime DateOfCreation { get; set; }
@@ -40,6 +40,10 @@ class MainWindowVM {
             // има имплементация на getStringFromPdfFile
         }
 
+    }
+
+    class Autor {
+        public string Name { get; set; }
     }
 
  }
