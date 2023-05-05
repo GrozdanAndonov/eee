@@ -1,0 +1,5 @@
+<StackPanel Name = "Display">
+            <StackPanel Orientation = "Horizontal"> 
+                <TextBlock Text = "Number of authors: "/> 
+                <TextBlock Text = "{Binding DisplayArticle.GetNumberOfAutors}"/>
+</StackPanel>

@@ -33,8 +33,17 @@ class MainWindowVM {
         public string KeyWords { get; set; }
         public byte[] PdfFile { get; set; }
 
-        public string GetStringFromPdfFile() {
-            // има имплементация на getStringFromPdfFile
+        public int GetNumberOfAutors {
+            get {
+                return Autors.Split(',').Length;
+            }
+        }
+
+        public string GetStringFromPdfFile {
+            get {
+                // има имплементация на getStringFromPdfFile
+            }
+           
         }
 
     }
