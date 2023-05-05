@@ -23,7 +23,9 @@ class MainWindowVM {
  // Model
  public class ArticlesContext : DbContext {
     
-    public ArticleContext() : base() { }
+    public ArticleContext() : base() {
+        DateOfCreation = DateTime.Now;
+     }
     public DbSet<Article> Articles { get; set; }
 
     class Article {
@@ -32,6 +34,7 @@ class MainWindowVM {
         public string Autors { get; set; }
         public string KeyWords { get; set; }
         public byte[] PdfFile { get; set; }
+        public DateTime DateOfCreation { get; set; }
 
         public string GetStringFromPdfFile() {
             // има имплементация на getStringFromPdfFile
