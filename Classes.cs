@@ -16,6 +16,16 @@ class MainWindowVM {
     private void getFileAndSend(object obj) {
         // има имплементация на getFileAndSend...
     }
+
+    private string checkDate(DateTime givenDate) {
+        DateTime now = DateTime.Now;
+        if (now.Date > givenDate.Date) {
+            return "The period has expired";
+        } else {
+            TimeSpan ts = givenDate - now;
+            return String.Format("Time remaining: days:{0}, hours:{1}, minutes: {2}", ts.Days, ts.Hours, ts.Minutes);  
+        }
+    }
 }
 
  // има имплементация на RelayCommand...
